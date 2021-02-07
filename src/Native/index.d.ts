@@ -1,1 +1,1 @@
-declare module "@native/hello-world.node";
+declare module "@native/OpenGLCube.node";

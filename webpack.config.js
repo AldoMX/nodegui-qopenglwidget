@@ -3,7 +3,25 @@ const webpack = require("webpack");
 const ForkTsCheckerWebpackPlugin = require("fork-ts-checker-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 
+const setBabelEnvIfUnset = (mode) => {
+  const validModes = ["development", "production", "test"];
+  if (validModes.includes(process.env.BABEL_ENV)) {
+    return;
+  }
+  if (validModes.includes(process.env.NODE_ENV)) {
+    process.env.BABEL_ENV = process.env.NODE_ENV;
+    return;
+  }
+  if (validModes.includes(mode)) {
+    process.env.BABEL_ENV = mode;
+    return;
+  }
+  process.env.BABEL_ENV = "development";
+};
+
 module.exports = (env, argv) => {
+  setBabelEnvIfUnset(argv.mode);
+
   const config = {
     mode: "production",
     entry: ["./src/index.tsx"],
@@ -23,7 +41,11 @@ module.exports = (env, argv) => {
           exclude: /node_modules/,
           use: {
             loader: "babel-loader",
-            options: { cacheDirectory: true, cacheCompression: false },
+            options: {
+              cacheDirectory: true,
+              cacheCompression: false,
+              presets: ["react-app"],
+            },
           },
         },
         {

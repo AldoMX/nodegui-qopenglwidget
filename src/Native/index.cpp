@@ -1,13 +1,9 @@
 #include <napi.h>
 
-Napi::String Method(const Napi::CallbackInfo& info) {
-  Napi::Env env = info.Env();
-  return Napi::String::New(env, "World");
-}
+#include "../OpenGLCube/Native/OpenGLCubeNapiWrapper.h"
 
 Napi::Object Init(Napi::Env env, Napi::Object exports) {
-  exports.Set(Napi::String::New(env, "hello"),
-              Napi::Function::New(env, Method));
+  OpenGLCubeNapiWrapper::init(env, exports);
   return exports;
 }
 
