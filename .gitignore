@@ -1,0 +1,4 @@
+node_modules
+dist/
+*.lognode_modules/
+coverage/
