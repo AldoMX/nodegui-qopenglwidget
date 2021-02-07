@@ -10,11 +10,11 @@ module.exports = (env, argv) => {
     target: "node",
     output: {
       path: path.resolve(__dirname, "dist"),
-      filename: "index.js"
+      filename: "index.js",
     },
     node: {
       __dirname: true,
-      __filename: true
+      __filename: true,
     },
     module: {
       rules: [
@@ -23,12 +23,12 @@ module.exports = (env, argv) => {
           exclude: /node_modules/,
           use: {
             loader: "babel-loader",
-            options: { cacheDirectory: true, cacheCompression: false }
-          }
+            options: { cacheDirectory: true, cacheCompression: false },
+          },
         },
         {
           test: /\.(png|jpe?g|gif|svg|bmp)$/i,
-          use: [{ loader: "file-loader" }]
+          use: [{ loader: "file-loader" }],
         },
         {
           test: /\.node/i,
@@ -36,17 +36,17 @@ module.exports = (env, argv) => {
             {
               loader: "native-addon-loader",
               options: {
-                name: "[name]-[hash].[ext]"
-              }
-            }
-          ]
-        }
-      ]
+                name: "[name]-[hash].[ext]",
+              },
+            },
+          ],
+        },
+      ],
     },
     plugins: [],
     resolve: {
-      extensions: [".tsx", ".ts", ".js", ".jsx", ".json"]
-    }
+      extensions: [".tsx", ".ts", ".js", ".jsx", ".json"],
+    },
   };
 
   if (argv.mode === "development") {

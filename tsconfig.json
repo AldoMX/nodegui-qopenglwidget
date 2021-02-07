@@ -1,17 +1,13 @@
 {
   "compilerOptions": {
-    "target": "es2016",
+    "target": "es2017",
     "module": "esnext",
     "jsx": "react",
     "strict": true,
     "alwaysStrict": true,
     "moduleResolution": "node",
     "esModuleInterop": true,
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
+    "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
     "allowSyntheticDefaultImports": true,
@@ -21,7 +17,5 @@
     "isolatedModules": true,
     "noEmit": true
   },
-  "include": [
-    "**/*"
-  ]
+  "include": ["**/*"]
 }
