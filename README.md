@@ -1,8 +1,8 @@
-# react-nodegui-starter
+# react-nodegui-starter (QOpenGLWidget)
 
 **Clone and run for a quick way to see React NodeGui in action.**
 
-<img alt="logo" src="https://github.com/nodegui/react-nodegui-starter/raw/master/assets/demo.png" height="500" />
+<img alt="logo" src="https://github.com/AldoMX/nodegui-qopenglwidget/raw/master/assets/demo.png" height="500" />
 
 ## To Use
 
@@ -10,11 +10,11 @@ To clone and run this repository you'll need [Git](https://git-scm.com) and [Nod
 
 ```bash
 # Clone this repository
-git clone https://github.com/nodegui/react-nodegui-starter
+git clone https://github.com/AldoMX/nodegui-qopenglwidget
 # Install CMake
 brew install cmake
 # Go into the repository
-cd react-nodegui-starter
+cd nodegui-qopenglwidget
 # Install dependencies
 yarn install
 # Run the dev server
