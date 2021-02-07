@@ -46,6 +46,9 @@ module.exports = (env, argv) => {
     plugins: [],
     resolve: {
       extensions: [".tsx", ".ts", ".js", ".jsx", ".json"],
+      alias: {
+        "@native": path.resolve(__dirname, "build/Release/"),
+      },
     },
   };
 
